@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:14
+    environment:
+      POSTGRES_DB: alurafood
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "3333:5432"
+
+volumes:
+  postgres_data:

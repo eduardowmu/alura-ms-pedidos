@@ -10,5 +10,13 @@ services:
     ports:
       - "3333:5432"
 
+  pedidos:
+    build: .
+    depends_on:
+      - postgres
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+
 volumes:
   postgres_data:
